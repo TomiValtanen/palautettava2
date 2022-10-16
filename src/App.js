@@ -9,11 +9,11 @@ import uuid from "react-uuid";
 
 
 function App() {
-  
+
   const [drinksData, setDrinksData] = useState([])
   const [introText, setIntroText] = useState(true)
   const [toggleRandom, setToggleRandom] = useState(true)
-  const[count,setCount]=useState(0)
+  const [count, setCount] = useState(0)
   //searched drinks data
   const [searchDrinksData, setSearchDrinksData] = useState([])
   const [search, setSearch] = useState("")
@@ -57,7 +57,7 @@ function App() {
     }
   }
   function makeRandom() {
-    setCount(prevCount => prevCount+1)
+    setCount(prevCount => prevCount + 1)
     setToggleRandom(true)
     setIntroText(false)
   }
@@ -99,31 +99,33 @@ function App() {
     <>
       <Header value={search} onChange={e => setSearch(e.target.value)} handleClick={card} handleRandom={makeRandom} />
       <main>
-        <h1>{toggleRandom ? "Coctail of the day!": "Your search results!"}</h1>
+        <h1>{toggleRandom ? "Coctail of the day!" : "Your search results!"}</h1>
         <h3 className="main-heading3">{introText ? "So weekend is coming and you need something new to test out ? Don't worry we have solution for you! Press the button and beging your journey with new and fabulous drinks! You are welcome to use search too if you already have something in mind!" : "Don't like what you see ? No need to worry press the button once again, cross your fingers and test it out!"}</h3>
         {toggleRandom && drinksData.map(drink => {
           return <div key={uuid()} className="card-container">
-          <h2 className="drink-name">{drink.strDrink}</h2>
-          <h3 className="glass-heading">Glass:</h3>
-          <p className="glass-text">{drink.strGlass}</p>
-          
-          <h3 className="instruction-heading">instructions:</h3>
-          <p className="instruction-text">{drink.strInstructions}</p>
-          <h3 className="measures-heading">measures & ingredients:</h3>
-          <ul>
-            {[drink.strMeasure1+" " +drink.strIngredient1,drink.strMeasure2+" " +drink.strIngredient2,drink.strMeasure3+" " +drink.strIngredient3,drink.strMeasure4+" " +drink.strIngredient4,drink.strMeasure5+" " +drink.strIngredient5,drink.strMeasure6+" " +drink.strIngredient6,drink.strMeasure7+" " +drink.strIngredient7,drink.strMeasure8+" " +drink.strIngredient8,drink.strMeasure9+" " +drink.strIngredient9,drink.strMeasure10+" " +drink.strIngredient10,drink.strMeasure11+" " +drink.strIngredient11,drink.strMeasure12+" " +drink.strIngredient12,drink.strMeasure13+" " +drink.strIngredient13,drink.strMeasure14+" " +drink.strIngredient14,drink.strMeasure15+" " +drink.strIngredient15].filter((inge => inge!=="null null" && inge!==" null")).map(ingre=> <li key={uuid()}>{ingre.replace("null","")}</li>)}
-         
-          </ul>
-          <img className="drink-image" src={drink.strDrinkThumb} alt="drink"></img>   
+            <h2 className="drink-name">{drink.strDrink}</h2>
+            <h3 className="glass-heading">Glass:</h3>
+            <p className="glass-text">{drink.strGlass}</p>
+
+            <h3 className="instruction-heading">instructions:</h3>
+            <p className="instruction-text">{drink.strInstructions}</p>
+            <h3 className="measures-heading">measures & ingredients:</h3>
+            <ul>
+              {[drink.strMeasure1 + " " + drink.strIngredient1, drink.strMeasure2 + " " + drink.strIngredient2, drink.strMeasure3 + " " + drink.strIngredient3, drink.strMeasure4 + " " + drink.strIngredient4, drink.strMeasure5 + " " + drink.strIngredient5, drink.strMeasure6 + " " + drink.strIngredient6, drink.strMeasure7 + " " + drink.strIngredient7, drink.strMeasure8 + " " + drink.strIngredient8, drink.strMeasure9 + " " + drink.strIngredient9, drink.strMeasure10 + " " + drink.strIngredient10, drink.strMeasure11 + " " + drink.strIngredient11, drink.strMeasure12 + " " + drink.strIngredient12, drink.strMeasure13 + " " + drink.strIngredient13, drink.strMeasure14 + " " + drink.strIngredient14, drink.strMeasure15 + " " + drink.strIngredient15].filter((inge => inge !== "null null" && inge !== " null")).map(ingre => <li key={uuid()}>{ingre.replace("null", "")}</li>)}
+
+            </ul>
+            <img className="drink-image" src={drink.strDrinkThumb} alt="drink"></img>
           </div>
         })}
+
         {!toggleRandom && <div>
           {close && <Card item={selectedDrink} handleClick={closed} />}
         </div>}
+
         {!toggleRandom && <div className="box-container">
           {datafound ? boxElement : <h3 className="nodata-text">Sorry We dont have that drink in our catalog.</h3>}
         </div>}
-        
+
 
         <Footer />
       </main>
