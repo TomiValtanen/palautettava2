@@ -32,9 +32,9 @@ return(
 <h3 className="glass-heading">Glass:</h3>
 <p className="glass-text">{props.item.glass}</p>
 
-<h3 className="instruction-heading">instructions:</h3>
+<h3 className="instruction-heading">Instructions:</h3>
 <p className="instruction-text">{props.item.instru}</p>
-<h3 className="measures-heading">measures & ingredients:</h3>
+<h3 className="measures-heading">Measures & ingredients:</h3>
 <ul>
 {liElements}
 </ul>

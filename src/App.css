@@ -4,7 +4,6 @@
 
 body {
     background: linear-gradient(to bottom, black 55%, rgb(97, 0, 92));
-    
     font-family: 'Alkalami', serif;
     font: 10px;
     color: white;
@@ -28,7 +27,7 @@ header{
 .random-button {
     width: 160px;
     height: 50px;
-    margin: auto;
+   margin: auto;
     margin-block: auto;
     border-radius: 10px;
     cursor: pointer;
@@ -117,7 +116,6 @@ main>h1{
 .container {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     margin-top: 50px;
 
 }
@@ -174,10 +172,17 @@ main>h1{
     margin-bottom: 40px;
 }
 
-ul {
+.card-container>ul {
     margin-top: 0;
-    list-style: none;
+    margin:auto;
+    padding-left: 0;
+    list-style-position: inside;
+    
 }
+li{
+    text-align:left;
+}
+
 .close-button {
     width: 160px;
     height: 50px;
