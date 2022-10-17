@@ -82,6 +82,7 @@ function App() {
     }
     setDrinkCards(arr)
     setToggleRandom(false)
+    setClose(false)
   }
   function select(drink) {
     for (let i = 0; i < searchDrinksData.length; i++) {
