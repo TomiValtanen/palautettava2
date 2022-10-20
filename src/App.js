@@ -44,7 +44,7 @@ function App() {
       })
   }, [search])
 
-  //random drink card 
+
   function makeDrink(item, i) {
     return {
       drink: item[i].strDrink,
@@ -61,7 +61,7 @@ function App() {
     setToggleRandom(true)
     setIntroText(false)
   }
-  //search drink card
+
   function drinkCard(i) {
     return {
       drink: searchDrinksData[i].strDrink,
